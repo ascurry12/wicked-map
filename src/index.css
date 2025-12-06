@@ -1,0 +1,453 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+section.title {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.title > h1 > span {
+  font-style: italic;
+}
+
+section.title > button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: #00be2c;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+section.title > button:hover {
+  cursor: pointer;
+  background-color: #ff0080;
+}
+
+section.oz-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+section.oz-map.mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+section.oz-map > svg {
+  height: 100vh;
+  width: 100%;
+  transform: scale(0.95);
+}
+
+section.oz-map > div.drawer {
+  background-color: white;
+  border-left: 1px solid rgba(187, 187, 187, 0.568);
+  width: 55%;
+  height: 100vh;
+  color: rgb(0, 0, 0);
+  transition: width 0.3s ease-in-out;
+}
+
+section.oz-map > div.drawer.mobile {
+  height: 100vh;
+  width: 100%;
+  transition: height 0.3s ease-in-out;
+}
+
+section.oz-map > div.drawer.mobile.closed {
+  height: 0;
+  width: 100%;
+  border-left: none;
+}
+
+section.oz-map > div.drawer.closed {
+  width: 0;
+  border-left: none;
+}
+
+section.oz-map > div.drawer.closed * {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-out;
+}
+
+section.oz-map > div.drawer:not(.closed) * {
+  opacity: 1;
+  transition: opacity 0.2s ease-in 0.1s;
+}
+
+section.oz-map > div.drawer > div.drawer-header {
+  display: flex;
+  align-items: center;
+}
+
+section.oz-map > div.drawer > div.drawer-header > button {
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: rgb(0, 0, 0);
+  margin: 1rem;
+  background-color: transparent;
+  font-size: xx-large;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+section.oz-map > div.drawer > div.drawer-header > button:hover {
+  background-color: rgba(0, 0, 0, 0.105);
+  border-radius: 100%;
+}
+section.oz-map > div.drawer > div.drawer-content {
+  margin: 0 1rem;
+  height: 90vh;
+  overflow-y: scroll;
+}
+
+section.oz-map > div.drawer.mobile > div.drawer-content {
+  height: 400px;
+  margin: 0 1rem;
+}
+
+section.oz-map > div.drawer > div.drawer-content > a.wiki-link {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+}
+
+ul {
+    /* STYLE LISTS FOR EVENTS AND SONGS */
+}
+
+section.oz-map > div.drawer > div.drawer-content > ul.characters {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 10px;
+  padding: 0;
+}
+
+section.oz-map > div.drawer > div.drawer-content > ul.characters > li {
+  width: 80px;
+}
+
+section.oz-map > div.drawer > div.drawer-content > ul.characters > li > p {
+  word-wrap: normal;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 0;
+}
+
+section.oz-map
+  > div.drawer
+  > div.drawer-content
+  > ul.characters
+  > li
+  > a
+  > img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+section.oz-map
+  > div.drawer
+  > div.drawer-content
+  > ul.characters
+  > li:nth-child(even)
+  > a
+  > img:hover {
+  border: 2px solid #00be2c;
+}
+
+section.oz-map
+  > div.drawer
+  > div.drawer-content
+  > ul.characters
+  > li:nth-child(odd)
+  > a
+  > img:hover {
+  border: 2px solid #ff279e;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* svg styles */
+
+#emeraldcity:hover,
+#munchkinland:hover,
+#gillikinforest:hover,
+#cornfield:hover,
+#glikkus:hover,
+#deadlydesert:hover,
+#gillikin:hover,
+#thevinkus:hover,
+#kiamoko:hover,
+#ugabu:hover,
+#quadlingcountry:hover,
+#yellowbrickroad:hover,
+#shiz:hover {
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+#quadlingcountry:hover > .cls-27:nth-child(1),
+#kiamoko:hover > .cls-28:nth-child(1),
+#ugabu:hover > .cls-30:nth-child(1),
+#glikkus:hover > .cls-9:nth-child(1),
+#deadlydesert:hover > .cls-21:nth-child(1),
+#thevinkus:hover > .cls-24:nth-child(1),
+#gillikin:hover > .cls-25:nth-child(1),
+#gillikin:hover > .cls-25:nth-child(2),
+#cornfield:hover > .cls-8:nth-child(1),
+#munchkinland:hover > .cls-6:nth-child(1),
+#munchkinland:hover > .cls-6:nth-child(2),
+#munchkinland:hover > .cls-6:nth-child(3),
+#emeraldcity:hover > .cls-5:nth-child(1),
+#shiz:hover > .cls-2:nth-child(1),
+#gillikinforest:hover > .cls-7:nth-child(1) {
+  stroke: black;
+  stroke-width: 1.5px;
+}
+
+.cls-1 {
+  fill: none;
+}
+
+.cls-2 {
+  fill: #4c7890;
+}
+
+#shiz:hover > .cls-2 {
+  fill: #628fa7;
+}
+
+.cls-3 {
+  fill: #efeed6;
+}
+
+.cls-3,
+.cls-4 {
+  opacity: 0.82;
+}
+
+.cls-5 {
+  fill: #3c6710;
+}
+
+#emeraldcity:hover > .cls-5 {
+  fill: #4e7c1f;
+}
+
+.cls-6 {
+  fill: #f7c1b9;
+}
+
+#munchkinland:hover > .cls-6 {
+  fill: #f5cdc7;
+}
+
+.cls-7 {
+  fill: #5b7f36;
+}
+
+#gillikinforest:hover > .cls-7 {
+  fill: #709649;
+}
+
+.cls-8 {
+  fill: #e6be61;
+}
+
+#cornfield:hover > .cls-8 {
+  fill: #e8c97f;
+}
+
+.cls-9 {
+  fill: #eaa9bb;
+}
+
+#glikkus:hover > .cls-9 {
+  fill: #f5bdcd;
+}
+
+.cls-10 {
+  font-size: 12px;
+}
+
+.cls-10,
+.cls-11,
+.cls-12,
+.cls-13,
+.cls-14,
+.cls-15,
+.cls-16,
+.cls-17,
+.cls-18,
+.cls-19,
+.cls-20 {
+  fill: #fff;
+}
+
+.cls-10,
+.cls-11,
+.cls-12,
+.cls-13,
+.cls-15,
+.cls-16,
+.cls-17,
+.cls-18,
+.cls-19,
+.cls-20 {
+  font-family: KannadaMN-Bold, "Kannada MN";
+  font-weight: 700;
+}
+
+.cls-21 {
+  fill: #d4c4a6;
+}
+
+#deadlydesert:hover > .cls-21 {
+  fill: #e7d6b5;
+}
+
+.cls-11 {
+  font-size: 11.59px;
+}
+
+.cls-12 {
+  font-size: 12.87px;
+}
+
+.cls-22 {
+  clip-path: url(#clippath-1);
+}
+
+.cls-23 {
+  clip-path: url(#clippath-2);
+}
+
+.cls-13 {
+  font-size: 6.64px;
+}
+
+.cls-24 {
+  fill: #094667;
+}
+
+#thevinkus:hover > .cls-24 {
+  fill: #1e658c;
+}
+
+.cls-25 {
+  fill: #a1b64e;
+}
+
+#gillikin:hover > .cls-25 {
+  fill: rgb(181, 200, 104);
+}
+
+.cls-15 {
+  font-size: 15.38px;
+}
+
+.cls-26 {
+  fill: #f4d448;
+}
+
+#yellowbrickroad:hover > [id*="piece"] > .cls-26 {
+  fill: #fee77d;
+}
+
+#yellowbrickroad:hover > .cls-26 {
+  fill: #f4d752;
+}
+
+#yellowbrickroad:hover {
+  filter: drop-shadow(2px 2px rgba(0, 0, 0));
+}
+
+.cls-27 {
+  fill: #de7a96;
+}
+
+#quadlingcountry:hover > .cls-27,
+#quadlingcountry:hover > #ruby > .cls-27 {
+  fill: #e998af;
+}
+
+.cls-16 {
+  font-size: 14.28px;
+}
+
+.cls-17 {
+  font-size: 5.49px;
+}
+
+.cls-28 {
+  fill: #6c8c4a;
+}
+
+#kiamoko:hover > .cls-28 {
+  fill: #83a163;
+}
+
+.cls-29 {
+  opacity: 0.61;
+}
+
+.cls-18 {
+  font-size: 19.89px;
+}
+
+.cls-4 {
+  fill: #d9ac36;
+}
+
+.cls-19 {
+  font-size: 16.47px;
+}
+
+.cls-30 {
+  fill: #daa017;
+}
+
+#yellowbrickroad:hover > [id*="piece"] > .cls-30 {
+  fill: rgb(237, 197, 102);
+}
+
+#ugabu:hover > .cls-30 {
+  fill: #e8b84a;
+}
+
+.cls-31 {
+  clip-path: url(#clippath);
+}
+
+.cls-20 {
+  font-size: 8.31px;
+}
